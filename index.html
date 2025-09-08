@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reserva Hotel - Inicio</title>
+  <style>
+    :root{
+      --accent:#0b6efd;
+      --dark:#0b1220;
+      --muted:#6b7280;
+      --card-bg:#ffffff;
+      --bg:#f5f7fb;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--dark);line-height:1.5}
+
+    /* Header */
+    header{background:rgba(255,255,255,0.95);backdrop-filter:blur(4px);border-bottom:1px solid rgba(15,23,42,0.04)}
+    .container{max-width:1100px;margin:0 auto;padding:16px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:700;font-size:1.125rem;color:var(--dark)}
+    nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:6px}
+    nav a:hover{color:var(--dark);background:rgba(11,110,237,0.06)}
+    .cta{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}
+
+    /* Hero */
+    .hero{min-height:60vh;display:flex;align-items:center;color:#fff;position:relative}
+    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1501117716987-c8e0f8f4288b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;filter:brightness(0.55);z-index:0}
+    .hero .container{position:relative;z-index:1}
+    .hero-inner{display:flex;flex-direction:column;gap:18px;max-width:720px}
+    .hero h1{font-size:2rem;margin:0}
+    .hero p{margin:0;color:rgba(255,255,255,0.9)}
+    .hero .buttons{display:flex;gap:12px;margin-top:8px}
+    .btn-primary{background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;border:none;font-weight:700;text-decoration:none}
+    .btn-ghost{background:transparent;color:#fff;padding:12px 18px;border-radius:10px;border:1px solid rgba(255,255,255,0.18);text-decoration:none}
+
+    /* Alojamiento */
+    .section{padding:40px 0}
+    .section h2{margin:0 0 18px 0;font-size:1.25rem}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card-bg);border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(11,22,40,0.06);display:flex;flex-direction:column}
+    .card img{width:100%;height:160px;object-fit:cover;display:block}
+    .card-body{padding:14px;display:flex;flex-direction:column;gap:8px}
+    .card-title{font-weight:700}
+    .card-desc{color:var(--muted);font-size:0.95rem}
+    .card-row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+    .price{font-weight:800}
+    .card .reserve{background:var(--accent);color:#fff;padding:8px 10px;border-radius:8px;text-decoration:none;font-weight:600}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .hero h1{font-size:1.6rem}
+    }
+    @media (max-width:600px){
+      .nav{flex-direction:column;align-items:flex-start}
+      .grid{grid-template-columns:1fr}
+      .hero{min-height:50vh}
+      .hero-inner{max-width:100%}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Hotel Reserva</div>
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#alojamiento">Alojamientos</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#reservar">Iniciar sesión</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <h1>Escápate y descansa en un lugar inolvidable</h1>
+        <p>Habitaciones cómodas, desayuno incluido y ubicación céntrica. Reserva ahora y consigue las mejores tarifas.</p>
+        <div class="buttons">
+          <a class="btn-primary" href="#reservar">Reservar ahora</a>
+          <a class="btn-ghost" href="#alojamiento">Ver alojamientos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container section" id="alojamiento">
+    <h2>Opciones de alojamiento</h2>
+    <div class="grid">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1505691723518-36a4e3b2b3b6?auto=format&fit=crop&w=800&q=60" alt="Habitación estándar">
+        <div class="card-body">
+          <div>
+            <div class="card-title">Habitación Estándar</div>
+            <div class="card-desc">Cama queen, baño privado y amenities esenciales.</div>
+          </div>
+          <div class="card-row">
+            <div class="price">$1,200 MXN / noche</div>
+            <a class="reserve" href="#reservar">Reservar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=60" alt="Habitación deluxe">
+        <div class="card-body">
+          <div>
+            <div class="card-title">Habitación Deluxe</div>
+            <div class="card-desc">Vistas a la ciudad, minibar y cama king size.</div>
+          </div>
+          <div class="card-row">
+            <div class="price">$2,200 MXN / noche</div>
+            <a class="reserve" href="#reservar">Reservar</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=60" alt="Suite">
+        <div class="card-body">
+          <div>
+            <div class="card-title">Suite</div>
+            <div class="card-desc">Sala independiente, bañera y servicio premium.</div>
+          </div>
+          <div class="card-row">
+            <div class="price">$4,500 MXN / noche</div>
+            <a class="reserve" href="#reservar">Reservar</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+</body>
+</html>
